@@ -41,7 +41,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        // $this->gclient = $google->getClient();
         $this->middleware('guest')->except('logout');
     }
 
