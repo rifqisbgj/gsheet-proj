@@ -15,6 +15,12 @@
                     @endif
 
                     You are logged in!
+
+                    <form action="/user/getdata" method="POST">
+                    @csrf
+                    <input type="text" name="link" class="form-control" id="">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
                 </div>
             </div>
         </div>

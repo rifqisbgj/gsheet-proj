@@ -17,7 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('login/google', 'Auth\LoginController@redirectToProvider');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
+    
+    Route::get('home', 'SheetController@index');
+    Route::post('getdata', 'SheetController@getData');
+
+});
+

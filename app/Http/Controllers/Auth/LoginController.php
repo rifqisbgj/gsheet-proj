@@ -69,7 +69,7 @@ class LoginController extends Controller
         Auth::login($authuser);
         // $user->token;
 
-        return redirect('home');
+        return redirect('/user/home');
     }
 
     public function findOrCreateUser($user)
